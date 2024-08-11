@@ -9,6 +9,13 @@ class RegistryAPIView(generics.ListCreateAPIView):
     queryset = Registry.objects.all()
     serializer_class = RegistrySerializer
 
+class PersonAPIView(generics.ListCreateAPIView):
+    queryset = Person.objects.all()
+    # serializer_class = PersonSerializer(queryset, many=True)
+    serializer_class = PersonSerializer
+
+    
+
 class RegistryTwoAPIView(generics.ListAPIView):
     queryset = Registry.objects.all()
     serializer_class = RegistryListSerializer
