@@ -72,5 +72,5 @@ class Gift(models.Model):
     accepted = models.BooleanField(default=False)
     registry = models.ForeignKey(Registry, related_name='gifts', on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.amount
+    # def __str__(self):
+    #     return str(self.amount)
