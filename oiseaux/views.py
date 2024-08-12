@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from rest_framework.exceptions import ValidationError
 from .models import *
 from .serializers import *
@@ -7,16 +7,13 @@ from .serializers import *
 # Create your views here.
 class RegistryAPIView(generics.ListCreateAPIView):
     queryset = Registry.objects.all()
-    serializer_class = RegistrySerializer
+    serializer_class = RegistryCUSerializer
 
 class PersonAPIView(generics.ListCreateAPIView):
     queryset = Person.objects.all()
-    # serializer_class = PersonSerializer(queryset, many=True)
     serializer_class = PersonSerializer
 
-    
-
-class RegistryTwoAPIView(generics.ListAPIView):
+class RegistryListAPIView(generics.ListAPIView):
     queryset = Registry.objects.all()
     serializer_class = RegistryListSerializer
     
